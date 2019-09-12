@@ -58,9 +58,31 @@ export class ErrorInterceptor implements HttpInterceptor {
             enableBackdropDismiss: false,
             buttons: [
                 {
-                    text: 'Ok'
+                    text: 'Ok',
+                    handler: () => {
+                        console.log('Confirm Okay');
+                    }
+                    
                 }
             ]
+
+            /* https://ionicframework.com/docs/api/alert */
+
+            /*buttons: [
+                {
+                  text: 'Cancel',
+                  role: 'cancel',
+                  cssClass: 'secondary',
+                  handler: (blah) => {
+                    console.log('Confirm Cancel: blah');
+                  }
+                }, {
+                  text: 'Ok',
+                  handler: () => {
+                    console.log('Confirm Okay');
+                  }
+                }
+              ]*/
         });
         alert.present();
     }
