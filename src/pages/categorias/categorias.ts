@@ -30,11 +30,33 @@ export class CategoriasPage {
   ionViewDidLoad() {
     this.categoriaService.findAll()
       .subscribe(response => {
-        console.log(response);
+       /* console.log(response);*/
         this.items = response;
       },
       error => {}
       );
   }
+  
+/*
+  ionViewDidLoad() {
+    let localUser = this.storage.getLocalUser();
+    if(localUser && localUser.email){
+      this.categoriaService.findAll()
+      .subscribe(response => {
+        console.log(response);
+        this.items = response;
+      },
+        error => {
+          if (error.status == 403) {
+            this.navCtrl.setRoot('HomePage');
+          }
+        });
+    }
+    else {
+      this.navCtrl.setRoot('HomePage');
+    }
+  }
+*/
+
 
 }
