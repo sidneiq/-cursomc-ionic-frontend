@@ -101,6 +101,8 @@
         <ion-option *ngFor="let estado of estados; first as f" [value]="estado.id" [selected]="f">{{estado.nome}}</ion-option>
       </ion-select>
     </ion-item>
+    <p class="danger" *ngIf="formGroup.controls.estadoId.dirty && formGroup.controls.estadoId.errors" margin-left>Valor inválido</p>
+
 
     <ion-item>
       <ion-label stacked>Cidade*</ion-label>
@@ -108,6 +110,8 @@
         <ion-option *ngFor="let cidade of cidades" [value]="cidade.id">{{cidade.nome}}</ion-option>
       </ion-select>
     </ion-item>
+    <p class="danger" *ngIf="formGroup.controls.cidadeId.dirty && formGroup.controls.cidadeId.errors" margin-left>Valor inválido</p>
+
 
     <button ion-button block type="submit"  [disabled]="formGroup.invalid">Criar conta</button>
   </form>

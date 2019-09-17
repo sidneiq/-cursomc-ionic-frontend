@@ -30,7 +30,7 @@ export class CategoriasPage {
   ionViewDidLoad() {
     this.categoriaService.findAll()
       .subscribe(response => {
-       /* console.log(response);*/
+        console.log(response);
         this.items = response;
       },
       error => {}
@@ -58,5 +58,9 @@ export class CategoriasPage {
   }
 */
 
+
+showProdutos(categoria_id : string) {
+  this.navCtrl.push('ProdutosPage', {param_categoria_id: categoria_id});    
+}
 
 }
